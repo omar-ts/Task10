@@ -58,7 +58,7 @@ namespace demo
             Console.WriteLine($"Average of products is {products7}");
 
             //10.Retrieve orders that are completed.
-            var orders=dbcontext.Orders.Where(e=>e.ShippedDate<=DateOnly.FromDateTime(DateTime.Now)&&e.ShippedDate!=null).ToList();
+            var orders=dbcontext.Orders.Where(e=>e.OrderStatus==4).ToList();
             foreach (var item in orders)
             {
                 Console.WriteLine($"Order-Id:{item.OrderId}");
